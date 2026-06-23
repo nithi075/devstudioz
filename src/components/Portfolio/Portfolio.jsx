@@ -118,7 +118,7 @@ import bri4 from '../../assets/bri4.jpg'
 
 import bri5 from '../../assets/bri5.jpg'
 
-import bri6 from '../../assets/bri6.jpg'
+
 
 import bri7 from '../../assets/bri7.jpg'
 
@@ -270,7 +270,7 @@ const photos = [
 
   { id: 56, src: bri5, alt: 'Bride Photography', category: 'Bride' },
 
-  { id: 57, src: bri6, alt: 'Bride Photography', category: 'Bride' },
+ 
 
   { id: 58, src: bri7, alt: 'Bride Photography', category: 'Bride' },
 
