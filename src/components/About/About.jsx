@@ -39,7 +39,7 @@ return ( <section className="about" id="about" aria-labelledby="about-heading"> 
     {/* ---- Text Column ---- */}
     <div className="about__text">
       <span className="section-label">
-        Why Srimathi Photography?
+        Why Devz Studio?
       </span>
 
       <h2 className="about__heading" id="about-heading">
@@ -55,9 +55,14 @@ return ( <section className="about" id="about" aria-labelledby="about-heading"> 
         allow you to relive your special day for years to come.
       </p>
 
-      <a href="#contact" className="btn about__cta">
-        Let's Talk
-      </a>
+    <a
+  href="https://wa.me/919543061112?text=Hello%20Devz%20Studio,%20I%20would%20like%20to%20discuss%20my%20upcoming%20event."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn about__cta"
+>
+  Let's Talk
+</a>
     </div>
 
   </div>

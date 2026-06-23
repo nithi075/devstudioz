@@ -105,9 +105,14 @@ export default function Hero() {
           cinematic photography that you’ll cherish for generations.
         </p>
 
-        <a href="#contact" className="btn btn-light hero__cta">
-          Book Your Session
-        </a>
+      <a
+  href="https://wa.me/919543061112?text=Hello%20Devz%20Studio,%20I%20would%20like%20to%20book%20a%20session."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn btn-light hero__cta"
+>
+  Book Your Session
+</a>
       </div>
 
       {/* Dots */}

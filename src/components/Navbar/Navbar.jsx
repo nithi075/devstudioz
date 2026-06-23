@@ -1,18 +1,16 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './Navbar.css'
+import logo from '../../assets/logo.png'
 
 const portfolioLinks = [
-  { label: 'Portraits', path: '/portfolio?category=portraits' },
-  { label: 'Pre Weddings', path: '/portfolio?category=pre' },
-  { label: 'Tamil Weddings', path: '/portfolio?category=tamil' },
-  { label: 'Telugu Weddings', path: '/portfolio?category=telugu' },
-  { label: 'Brahmin Weddings', path: '/portfolio?category=brahmin' },
-  { label: 'Christian Weddings', path: '/portfolio?category=christian' },
-  { label: 'Muslim Weddings', path: '/portfolio?category=muslim' },
-  { label: 'Engagement', path: '/portfolio?category=engage' },
+  { label: 'Wedding', path: '/portfolio?category=Wedding' },
+  { label: 'Reception', path: '/portfolio?category=Reception' },
+  { label: 'Pre Wedding', path: '/portfolio?category=Pre Wedding' },
+  { label: 'Maternity', path: '/portfolio?category=Maternity' },
+  { label: 'Bride', path: '/portfolio?category=Bride' },
+  { label: 'Baby', path: '/portfolio?category=Baby' },
 ]
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -127,11 +125,12 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* LOGO */}
-       <Link to="/" className="navbar__logo" aria-label="Srimathi Photography">
-  <span className="navbar__logo-text">
-    SRIMATHI PHOTOGRAPHY
-  </span>
+    <Link to="/" className="navbar__logo" aria-label="Srimathi Photography">
+  <img
+    src={logo}
+    alt="Srimathi Photography"
+    className="navbar__logo-image"
+  />
 </Link>
 
         {/* RIGHT LINKS */}

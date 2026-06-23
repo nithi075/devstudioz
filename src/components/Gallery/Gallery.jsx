@@ -5,29 +5,49 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Gallery.css'
-import img1 from '../../assets/featured/img1.jpg'
-import img2 from '../../assets/featured/img12.jpg'
-import img3 from '../../assets/featured/img3.jpg'
-import img4 from '../../assets/featured/img4.jpg'
-import img5 from '../../assets/featured/img5.jpg'
-import img6 from '../../assets/featured/img6.jpg'
-import img7 from '../../assets/featured/img11.jpg'
-import img8 from '../../assets/featured/img8.jpg'
-import img9 from '../../assets/featured/img7.jpg'
-import img10 from '../../assets/featured/img10.jpg'
-import img11 from '../../assets/featured/img9.jpg'
-import img12 from '../../assets/featured/img2.jpg'
-import img13 from '../../assets/featured/img13.jpg'
-import img14 from '../../assets/featured/img15.jpg'
-import img15 from '../../assets/featured/img17.jpg'
-import img16 from '../../assets/featured/img16.jpg'
-import img17 from '../../assets/featured/img14.jpg'
-import img18 from '../../assets/featured/img18.jpg'
-import img19 from '../../assets/featured/img19.jpg'
-import img20 from '../../assets/featured/img20.jpg'
-import img21 from '../../assets/featured/img21.jpg'
-import img22 from '../../assets/featured/img22.jpg'
+import img1 from '../../assets/wed1.jpg'
 
+import img2 from '../../assets/wed3.jpg'
+
+import img3 from '../../assets/mat14.jpg'
+
+import img4 from '../../assets/mat1.jpg'
+
+import img5 from '../../assets/wed4.jpg'
+
+import img6 from '../../assets/mat9.jpg'
+
+import img7 from '../../assets/mat11.jpg'
+
+import img8 from '../../assets/pre8.jpg'
+
+import img9 from '../../assets/pre4.jpg'
+
+import img10 from '../../assets/bri1.jpg'
+
+import img11 from '../../assets/baby3.jpg'
+
+import img12 from '../../assets/bri3.jpg'
+
+import img13 from '../../assets/mat7.jpg'
+
+import img14 from '../../assets/pre3.jpg'
+
+import img15 from '../../assets/pre12.jpg'
+
+import img16 from '../../assets/pre5.jpg'
+
+import img17 from '../../assets/mat13.jpg'
+
+import img18 from '../../assets/mat2.jpg'
+
+import img19 from '../../assets/mat3.jpg'
+
+import img20 from '../../assets/wed8.jpg'
+
+import img21 from '../../assets/rec15.jpg'
+
+import img22 from '../../assets/rec12.jpg' 
 const photos = [
   { id: 1, src: img1, alt: 'Wedding Photography' },
   { id: 2, src: img2, alt: 'Wedding Photography' },

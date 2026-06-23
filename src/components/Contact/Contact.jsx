@@ -27,12 +27,13 @@ export default function Contact() {
             timeless memories together.
           </p>
 
-          <a
-            href="#"
-            className="btn btn-light"
-          >
-            Get in Touch
-          </a>
+        <a
+href="https://wa.me/919543061112?text=Hello%20Devz%20Studio,%20I%20am%20interested%20in%20your%20photography%20work."  target="_blank"
+  rel="noopener noreferrer"
+  className="btn btn-light"
+>
+  Get in Touch
+</a>
         </div>
       </div>
     </section>

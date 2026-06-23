@@ -1,15 +1,14 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './Footer.css'
+import logo from '../../assets/logo.png'
 
 const portfolioLinks = [
-{ label: 'Portraits', path: '/portfolio?category=portraits' },
-{ label: 'Pre Weddings', path: '/portfolio?category=pre' },
-{ label: 'Tamil Weddings', path: '/portfolio?category=tamil' },
-{ label: 'Telugu Weddings', path: '/portfolio?category=telugu' },
-{ label: 'Brahmin Weddings', path: '/portfolio?category=brahmin' },
-{ label: 'Christian Weddings', path: '/portfolio?category=christian' },
-{ label: 'Muslim Weddings', path: '/portfolio?category=muslim' },
-{ label: 'Engagement', path: '/portfolio?category=engage' },
+  { label: 'Wedding', path: '/portfolio?category=Wedding' },
+  { label: 'Reception', path: '/portfolio?category=Reception' },
+  { label: 'Pre Wedding', path: '/portfolio?category=Pre Wedding' },
+  { label: 'Maternity', path: '/portfolio?category=Maternity' },
+  { label: 'Bride', path: '/portfolio?category=Bride' },
+  { label: 'Baby', path: '/portfolio?category=Baby' },
 ]
 
 export default function Footer() {
@@ -50,8 +49,8 @@ return ( <footer className="footer"> <div className="footer__top">
   aria-label="Srimathi Photography — Home"
 >
   <span className="footer__logo-text">
-    SRIMATHI
-    <small>PHOTOGRAPHY</small>
+    DEVZ
+    <small>STUDIOZ</small>
   </span>
 </Link>
 
@@ -123,7 +122,7 @@ return ( <footer className="footer"> <div className="footer__top">
 
         {/* Facebook */}
         <a
-          href="https://www.facebook.com/Zerowattsphotography/"
+          href="https://www.facebook.com//"srimathiphotography
           className="footer__social-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -189,12 +188,12 @@ return ( <footer className="footer"> <div className="footer__top">
         </a>
       </div>
 
-      <a href="tel:+918939700777" className="footer__phone">
-        +91 89397 00777
+      <a href="tel:+919543061112" className="footer__phone">
+        +91 9543061112
       </a>
 
       <a
-        href="https://wa.me/918939700777"
+        href="https://wa.me/919543061112?text=Hello%20Devz%20Studio,%20I%20would%20like%20to%20discuss%20my%20upcoming%20event."
         className="footer__whatsapp"
         target="_blank"
         rel="noopener noreferrer"
@@ -208,7 +207,7 @@ return ( <footer className="footer"> <div className="footer__top">
 
   <div className="footer__bottom">
     <p className="footer__copyright">
-      © 2026 ZEROWATTS PHOTOGRAPHY
+      © 2026 Devz Studioz. All rights reserved.
     </p>
   </div>
 </footer>
