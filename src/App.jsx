@@ -13,7 +13,7 @@ import Portfolio from './components/Portfolio/Portfolio'
 import ScrollToTop from './components/ScrollToTop'
 
 import './App.css'
-import Floating from './components/Floating/Floating'
+import Floating from './components/floating/floating'
 import Packages from './components/Packages/Packages'
 import AdminImageUpload from './pages/AdminImageUpload'
 import AdminTestimonialUpload from './pages/AdminTestimonialUpload'
