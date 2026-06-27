@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./imageUpload.css";
+import "./ImageUpload.css";
 
 export default function AdminImageUpload() {
   const [title, setTitle] = useState("");
