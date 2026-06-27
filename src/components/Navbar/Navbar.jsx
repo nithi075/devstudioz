@@ -6,7 +6,7 @@ import logo from '../../assets/logo.png'
 const portfolioLinks = [
   { label: 'Wedding', path: '/portfolio?category=Wedding' },
   { label: 'Reception', path: '/portfolio?category=Reception' },
-  { label: 'Pre Wedding', path: '/portfolio?category=Pre Wedding' },
+  { label: 'Outdoor Shoots', path: '/portfolio?category=Outdoor Shoots' },
   { label: 'Maternity', path: '/portfolio?category=Maternity' },
   { label: 'Bride', path: '/portfolio?category=Bride' },
   { label: 'Baby', path: '/portfolio?category=Baby' },

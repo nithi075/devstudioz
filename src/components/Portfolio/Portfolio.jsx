@@ -37,12 +37,12 @@ import pre6 from '../../assets/pre6.jpg'
 import pre7 from '../../assets/pre7.jpg'
 import pre8 from '../../assets/pre8.jpg'
 import pre9 from '../../assets/pre9.jpg'
-import pre10 from '../../assets/pre10.jpg'
+import pre10 from '../../assets/mat10.jpg'
 import pre11 from '../../assets/pre11.jpg'
 import pre12 from '../../assets/pre12.jpg'
 import pre13 from '../../assets/pre13.jpg'
-import pre14 from '../../assets/pre14.jpg'
-import pre15 from '../../assets/pre15.jpg'
+import pre14 from '../../assets/mat9.jpg'
+import pre15 from '../../assets/mat8.jpg'
 import mat1 from '../../assets/mat1.jpg'
 import mat2 from '../../assets/mat2.jpg'
 import mat3 from '../../assets/mat3.jpg'
@@ -50,13 +50,14 @@ import mat4 from '../../assets/mat4.jpg'
 import mat5 from '../../assets/mat5.jpg'
 import mat6 from '../../assets/mat6.jpg'
 import mat7 from '../../assets/mat7.jpg'
-import mat8 from '../../assets/mat8.jpg'
-import mat9 from '../../assets/mat9.jpg'
-import mat10 from '../../assets/mat10.jpg'
 import mat11 from '../../assets/mat11.jpg'
 import mat12 from '../../assets/mat12.jpg'
 import mat13 from '../../assets/mat13.jpg'
 import mat14 from '../../assets/mat14.jpg'
+import mat8 from '../../assets/mat15.jpg'
+import mat9 from '../../assets/mat16.jpg'
+import mat10 from '../../assets/mat17.jpg'
+
 import bri1 from '../../assets/bri1.jpg'
 import bri2 from '../../assets/bri2.jpg'
 import bri3 from '../../assets/bri3.jpg'
@@ -130,37 +131,37 @@ const photos = [
 
 
 
-  // Pre Wedding
+  // Outdoor Shoots
 
-  { id: 23, src: pre1, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 23, src: pre1, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 24, src: pre2, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 24, src: pre2, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 25, src: pre3, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 25, src: pre3, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 26, src: pre4, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 26, src: pre4, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 27, src: pre5, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 27, src: pre5, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 28, src: pre6, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 28, src: pre6, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 29, src: pre7, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 29, src: pre7, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 30, src: pre8, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 30, src: pre8, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 31, src: pre9, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 31, src: pre9, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 32, src: pre10, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 32, src: pre10, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 33, src: pre11, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 33, src: pre11, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 34, src: pre12, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 34, src: pre12, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 35, src: pre13, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 35, src: pre13, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 36, src: pre14, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 36, src: pre14, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
-  { id: 37, src: pre15, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 37, src: pre15, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
 
 
 
@@ -254,21 +255,21 @@ const localPhotos = [
   { id: 'l20', src: rec20, alt: 'Reception Photography',  category: 'Reception' },
   { id: 'l21', src: rec21, alt: 'Reception Photography',  category: 'Reception' },
   { id: 'l22', src: rec22, alt: 'Reception Photography',  category: 'Reception' },
-  { id: 'l23', src: pre1,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l24', src: pre2,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l25', src: pre3,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l26', src: pre4,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l27', src: pre5,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l28', src: pre6,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l29', src: pre7,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l30', src: pre8,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l31', src: pre9,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l32', src: pre10, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l33', src: pre11, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l34', src: pre12, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l35', src: pre13, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l36', src: pre14, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
-  { id: 'l37', src: pre15, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l23', src: pre1,  alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l24', src: pre2,  alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l25', src: pre3,  alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l26', src: pre4,  alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l27', src: pre5,  alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l28', src: pre6,  alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l29', src: pre7,  alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l30', src: pre8,  alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l31', src: pre9,  alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l32', src: pre10, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l33', src: pre11, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l34', src: pre12, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l35', src: pre13, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l36', src: pre14, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
+  { id: 'l37', src: pre15, alt: 'Outdoor Shoots Photography', category: 'Outdoor Shoots' },
   { id: 'l38', src: mat1,  alt: 'Maternity Photography',  category: 'Maternity' },
   { id: 'l39', src: mat2,  alt: 'Maternity Photography',  category: 'Maternity' },
   { id: 'l40', src: mat3,  alt: 'Maternity Photography',  category: 'Maternity' },
@@ -303,7 +304,7 @@ const categories = [
   { id: 'all',        label: 'All' },
   { id: 'Wedding',    label: 'Wedding' },
   { id: 'Reception',  label: 'Reception' },
-  { id: 'Pre Wedding',label: 'Pre Wedding' },
+  { id: 'Outdoor Shoots',label: 'Outdoor Shoots' },
   { id: 'Maternity',  label: 'Maternity' },
   { id: 'Bride',      label: 'Bride' },
   { id: 'Baby',       label: 'Baby' },
@@ -313,7 +314,7 @@ const categoryDescriptions = {
   all:          'Explore our complete collection of photography works.',
   Wedding:      'Timeless wedding photography capturing beautiful moments.',
   Reception:    'Reception photography filled with celebration and joy.',
-  'Pre Wedding':'Creative pre-wedding sessions for couples.',
+  'Outdoor Shoots':'Creative pre-wedding sessions for couples.',
   Maternity:    'Beautiful maternity portraits celebrating motherhood.',
   Bride:        'Elegant bridal portraits and wedding looks.',
   Baby:         'Cute baby photography and memorable childhood moments.',

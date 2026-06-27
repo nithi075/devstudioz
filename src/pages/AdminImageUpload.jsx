@@ -74,7 +74,7 @@ export default function AdminImageUpload() {
               <option value="">Choose a category</option>
               <option>Wedding</option>
               <option>Reception</option>
-              <option>Pre Wedding</option>
+              <option>Outdoor Shoots</option>
               <option>Bride</option>
               <option>Baby</option>
               <option>Maternity</option>
