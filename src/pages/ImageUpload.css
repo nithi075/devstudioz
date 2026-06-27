@@ -1,0 +1,293 @@
+/* =============================================
+   ZERO WATTS PHOTOGRAPHY
+   imageUpload.css
+   Depends on global design tokens (globals.css)
+   ============================================= */
+
+/* ---- Container ---- */
+.image-upload {
+  max-width: 480px;
+  margin: var(--sp-10) auto;
+  padding: var(--sp-8);
+  background: var(--color-cream);
+  border: 0.5px solid var(--color-border);
+}
+
+/* ---- Header ---- */
+.image-upload__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+  padding-bottom: var(--sp-6);
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.image-upload__icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid var(--color-gold);
+  color: var(--color-gold);
+  font-size: var(--fs-lg);
+}
+
+.image-upload__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--color-black);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.image-upload__subtitle {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  color: var(--color-light-gray);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: var(--sp-1);
+}
+
+/* ---- Form body ---- */
+.image-upload__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* ---- Field group ---- */
+.image-upload__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.image-upload__label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-mid-gray);
+}
+
+/* ---- Inputs & Select ---- */
+.image-upload__input,
+.image-upload__select {
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--color-white);
+  border: 0.5px solid var(--color-border);
+  border-radius: 0;
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  font-weight: 300;
+  color: var(--color-dark);
+  outline: none;
+  transition: border-color var(--transition-fast);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.image-upload__input::placeholder {
+  color: var(--color-light-gray);
+  font-style: italic;
+}
+
+.image-upload__input:focus,
+.image-upload__select:focus {
+  border-color: var(--color-gold);
+}
+
+/* Select wrapper — custom arrow */
+.image-upload__select-wrap {
+  position: relative;
+}
+
+.image-upload__select-wrap::after {
+  content: "";
+  position: absolute;
+  right: var(--sp-4);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--color-light-gray);
+  pointer-events: none;
+}
+
+.image-upload__select {
+  /* Room for custom arrow */
+  padding-right: var(--sp-8);
+  cursor: pointer;
+}
+
+/* Unselected placeholder option */
+.image-upload__select option[value=""] {
+  color: var(--color-light-gray);
+}
+
+/* ---- File drop zone ---- */
+.image-upload__dropzone {
+  display: block;
+  border: 1px dashed var(--color-border);
+  padding: var(--sp-6) var(--sp-4);
+  text-align: center;
+  cursor: pointer;
+  background: var(--color-off-white);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.image-upload__dropzone:hover {
+  border-color: var(--color-gold);
+  background: var(--color-cream);
+}
+
+.image-upload__dropzone-icon {
+  font-size: var(--fs-xl);
+  color: var(--color-light-gray);
+  margin-bottom: var(--sp-2);
+  line-height: 1;
+}
+
+.image-upload__dropzone-label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-mid-gray);
+  letter-spacing: 0.04em;
+}
+
+.image-upload__dropzone-hint {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  color: var(--color-light-gray);
+  margin-top: var(--sp-1);
+}
+
+/* ---- Preview banner ---- */
+.image-upload__preview {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  margin-top: var(--sp-4);
+  border: 0.5px solid var(--color-border);
+}
+
+/* ---- Submit button ---- */
+.image-upload__submit {
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--color-dark);
+  background: transparent;
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.image-upload__submit:hover:not(:disabled) {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.image-upload__submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =============================================
+   MOBILE — ≤ 480px
+   ============================================= */
+@media (max-width: 480px) {
+
+  /* ---- Container ---- */
+  .image-upload {
+    max-width: 100%;
+    margin: 0;
+    padding: var(--sp-5) var(--sp-4);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    min-height: 100dvh;
+  }
+
+  /* ---- Header ---- */
+  .image-upload__header {
+    margin-bottom: var(--sp-6);
+    padding-bottom: var(--sp-5);
+    gap: var(--sp-3);
+  }
+
+  .image-upload__icon {
+    width: 34px;
+    height: 34px;
+    font-size: var(--fs-base);
+  }
+
+  .image-upload__title {
+    font-size: var(--fs-lg);
+  }
+
+  /* ---- Fields ---- */
+  .image-upload__fields {
+    gap: var(--sp-5);
+  }
+
+  /* ---- Inputs & Select — prevent iOS zoom ---- */
+  .image-upload__input,
+  .image-upload__select {
+    font-size: var(--fs-md);
+    padding: var(--sp-3) var(--sp-3);
+  }
+
+  .image-upload__select {
+    padding-right: var(--sp-8);
+  }
+
+  /* ---- Dropzone ---- */
+  .image-upload__dropzone {
+    padding: var(--sp-5) var(--sp-3);
+  }
+
+  .image-upload__dropzone-icon {
+    font-size: var(--fs-lg);
+  }
+
+  /* ---- Preview ---- */
+  .image-upload__preview {
+    height: 180px;
+    margin-top: var(--sp-3);
+  }
+
+  /* ---- Submit — filled on mobile ---- */
+  .image-upload__submit {
+    padding: var(--sp-4) var(--sp-4);
+    background: var(--color-dark);
+    color: var(--color-white);
+    border-color: var(--color-dark);
+  }
+
+  .image-upload__submit:hover:not(:disabled) {
+    background: var(--color-dark);
+    color: var(--color-white);
+  }
+
+  .image-upload__submit:active:not(:disabled) {
+    background: var(--color-charcoal);
+    border-color: var(--color-charcoal);
+  }
+}

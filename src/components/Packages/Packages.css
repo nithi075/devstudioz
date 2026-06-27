@@ -1,0 +1,222 @@
+/* =============================================
+   Packages.css
+   ============================================= */
+
+.packages {
+  background: var(--color-cream);
+  padding: var(--sp-24) var(--sp-8);
+}
+
+.packages .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- Heading ---------- */
+
+.packages-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: 400;
+  color: var(--color-dark);
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: var(--sp-16);
+}
+
+.packages-title span {
+  color: var(--color-gold);
+}
+
+.section-label {
+  display: block;
+  text-align: center;
+  margin-bottom: var(--sp-4);
+}
+
+/* ---------- Grid ---------- */
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-8);
+}
+
+/* ---------- Card ---------- */
+
+.package-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: var(--sp-8);
+  transition: all var(--transition-base);
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+}
+
+.package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 45px rgba(0,0,0,.12);
+}
+
+.package-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: var(--sp-3);
+}
+
+/* ---------- Price ---------- */
+
+.price {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  color: var(--color-gold);
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+/* ---------- Features ---------- */
+
+.package-card ul {
+  margin-bottom: var(--sp-8);
+}
+
+.package-card li {
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  color: var(--color-mid-gray);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.7;
+}
+
+.package-card li:last-child {
+  border-bottom: none;
+}
+
+/* ---------- Button ---------- */
+
+.package-card .btn {
+  width: 100%;
+  margin-top: var(--sp-4);
+}
+
+/* =============================================
+   Tablet
+   ============================================= */
+
+@media (max-width:1024px){
+
+.packages{
+padding:var(--sp-20) var(--sp-6);
+}
+
+.packages-grid{
+grid-template-columns:repeat(2,1fr);
+gap:var(--sp-6);
+}
+
+.packages-title{
+font-size:var(--fs-2xl);
+}
+
+.price{
+font-size:var(--fs-2xl);
+}
+
+}
+
+/* =============================================
+   Mobile
+   ============================================= */
+
+/* =============================================
+   Mobile - Horizontal Scroll
+   ============================================= */
+
+@media (max-width:768px){
+
+.packages{
+  padding:var(--sp-16) var(--sp-5);
+}
+
+.packages-title{
+  font-size:var(--fs-2xl);
+  margin-bottom:var(--sp-10);
+}
+
+/* Horizontal Scroll */
+.packages-grid{
+  display:flex;
+  overflow-x:auto;
+  gap:20px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:10px;
+}
+
+/* Hide Scrollbar */
+.packages-grid::-webkit-scrollbar{
+  display:none;
+}
+
+.packages-grid{
+  scrollbar-width:none;
+}
+
+.package-card{
+  flex:0 0 85%;
+  scroll-snap-align:center;
+  padding:var(--sp-6);
+}
+
+.package-card h3{
+  font-size:var(--fs-lg);
+}
+
+.price{
+  font-size:2rem;
+}
+
+.package-card li{
+  font-size:.9rem;
+  line-height:1.6;
+}
+
+}
+
+/* =============================================
+   Small Mobile
+   ============================================= */
+
+@media (max-width:480px){
+
+.packages{
+  padding:var(--sp-12) var(--sp-4);
+}
+
+.packages-title{
+  font-size:var(--fs-xl);
+}
+
+.package-card{
+  flex:0 0 92%;
+  padding:20px;
+  border-radius:14px;
+}
+
+.package-card h3{
+  font-size:1.4rem;
+}
+
+.price{
+  font-size:1.9rem;
+}
+
+.package-card li{
+  font-size:.85rem;
+}
+
+}

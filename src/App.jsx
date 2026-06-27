@@ -13,7 +13,10 @@ import Portfolio from './components/Portfolio/Portfolio'
 import ScrollToTop from './components/ScrollToTop'
 
 import './App.css'
-import Floating from './components/floating/floating'
+import Floating from './components/Floating/Floating'
+import Packages from './components/Packages/Packages'
+import AdminImageUpload from './pages/AdminImageUpload'
+import AdminTestimonialUpload from './pages/AdminTestimonialUpload'
 
 function Home() {
   return (
@@ -27,6 +30,7 @@ function Home() {
 
       </section>
       <Testimonials />
+      <Packages />
       <section id="contact">
 
         <Contact />
@@ -45,14 +49,23 @@ function App() {
       <ScrollToTop />
 
       <Navbar />
+<Routes>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
+  <Route path="/" element={<Home />} />
 
-        <Route path="/portfolio" element={<Portfolio />} />
+  <Route path="/portfolio" element={<Portfolio />} />
 
+  <Route
+    path="/admin/upload-images"
+    element={<AdminImageUpload />}
+  />
 
-      </Routes>
+  <Route
+    path="/admin/upload-testimonials"
+    element={<AdminTestimonialUpload />}
+  />
+
+</Routes>
 
       <Footer />
     </div>

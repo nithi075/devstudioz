@@ -1,139 +1,77 @@
 /* =============================================
-   Portfolio — Category filter tabs + photo grid
-   8 categories: Portraits, Pre Weddings,
-   Tamil/Telugu/Brahmin/Christian/Muslim Weddings,
-   Engagement
+   Portfolio — local assets + API uploaded images
+   Newest uploaded images appear first per category
    ============================================= */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Portfolio.css'
-import wed1 from '../../assets/wed1.jpg' 
 
+// ---- Local asset imports ----
+import wed1 from '../../assets/wed1.jpg'
 import wed2 from '../../assets/wed2.jpg'
-
 import wed3 from '../../assets/wed3.jpg'
-
 import wed4 from '../../assets/wed4.jpg'
-
 import wed5 from '../../assets/wed5.jpg'
-
 import wed6 from '../../assets/wed6.jpg'
-
 import wed7 from '../../assets/wed7.jpg'
-
 import wed8 from '../../assets/wed8.jpg'
-
 import rec9 from '../../assets/rec1.jpg'
-
 import rec10 from '../../assets/rec2.jpg'
-
 import rec11 from '../../assets/rec3.jpg'
-
 import rec12 from '../../assets/rec4.jpg'
-
 import rec13 from '../../assets/rec5.jpg'
-
 import rec14 from '../../assets/rec6.jpg'
-
 import rec15 from '../../assets/rec7.jpg'
-
 import rec16 from '../../assets/rec8.jpg'
-
 import rec17 from '../../assets/rec9.jpg'
-
 import rec18 from '../../assets/rec10.jpg'
-
 import rec19 from '../../assets/rec11.jpg'
-
 import rec20 from '../../assets/rec12.jpg'
-
 import rec21 from '../../assets/rec13.jpg'
-
 import rec22 from '../../assets/rec14.jpg'
-
-import pre1 from  '../../assets/pre1.jpg'
-
-import pre2 from  '../../assets/pre2.jpg'
-
-import pre3 from  '../../assets/pre3.jpg'
-
-import pre4 from  '../../assets/pre4.jpg'
-
-import pre5 from  '../../assets/pre5.jpg'
-
-import pre6 from  '../../assets/pre6.jpg'
-
-import pre7 from  '../../assets/pre7.jpg'
-
-import pre8 from  '../../assets/pre8.jpg'
-
-import pre9 from  '../../assets/pre9.jpg'
-
-import pre10 from  '../../assets/pre10.jpg'
-
-import pre11 from  '../../assets/pre11.jpg'
-
-import pre12 from  '../../assets/pre12.jpg'
-
-import pre13 from  '../../assets/pre13.jpg'
-
-import pre14 from  '../../assets/pre14.jpg'
-
-import pre15 from  '../../assets/pre15.jpg'
-
+import pre1 from '../../assets/pre1.jpg'
+import pre2 from '../../assets/pre2.jpg'
+import pre3 from '../../assets/pre3.jpg'
+import pre4 from '../../assets/pre4.jpg'
+import pre5 from '../../assets/pre5.jpg'
+import pre6 from '../../assets/pre6.jpg'
+import pre7 from '../../assets/pre7.jpg'
+import pre8 from '../../assets/pre8.jpg'
+import pre9 from '../../assets/pre9.jpg'
+import pre10 from '../../assets/pre10.jpg'
+import pre11 from '../../assets/pre11.jpg'
+import pre12 from '../../assets/pre12.jpg'
+import pre13 from '../../assets/pre13.jpg'
+import pre14 from '../../assets/pre14.jpg'
+import pre15 from '../../assets/pre15.jpg'
 import mat1 from '../../assets/mat1.jpg'
-
 import mat2 from '../../assets/mat2.jpg'
-
 import mat3 from '../../assets/mat3.jpg'
-
 import mat4 from '../../assets/mat4.jpg'
-
 import mat5 from '../../assets/mat5.jpg'
-
 import mat6 from '../../assets/mat6.jpg'
-
 import mat7 from '../../assets/mat7.jpg'
-
 import mat8 from '../../assets/mat8.jpg'
-
 import mat9 from '../../assets/mat9.jpg'
-
 import mat10 from '../../assets/mat10.jpg'
-
 import mat11 from '../../assets/mat11.jpg'
-
 import mat12 from '../../assets/mat12.jpg'
-
 import mat13 from '../../assets/mat13.jpg'
-
 import mat14 from '../../assets/mat14.jpg'
-
 import bri1 from '../../assets/bri1.jpg'
-
 import bri2 from '../../assets/bri2.jpg'
-
 import bri3 from '../../assets/bri3.jpg'
-
 import bri4 from '../../assets/bri4.jpg'
-
 import bri5 from '../../assets/bri5.jpg'
 
 
-
+import bri6 from '../../assets/bri6.jpg'
 import bri7 from '../../assets/bri7.jpg'
-
 import baby1 from '../../assets/baby1.jpg'
-
 import baby2 from '../../assets/baby2.jpg'
-
 import baby3 from '../../assets/baby3.jpg'
-
 import baby4 from '../../assets/baby4.jpg'
-
 import baby5 from '../../assets/baby5.jpg'
-
 import baby6 from '../../assets/baby6.jpg'
-
 import baby7 from '../../assets/baby7.jpg'
 
 
@@ -291,49 +229,134 @@ const photos = [
   { id: 64, src: baby6, alt: 'Baby Photography', category: 'Baby' },
 
   { id: 65, src: baby7, alt: 'Baby Photography', category: 'Baby' },
-
 ]
+// ---- Static local photos (shown after API images) 
+const localPhotos = [
+  { id: 'l1',  src: wed1,  alt: 'Wedding Photography',    category: 'Wedding' },
+  { id: 'l2',  src: wed2,  alt: 'Wedding Photography',    category: 'Wedding' },
+  { id: 'l3',  src: wed3,  alt: 'Wedding Photography',    category: 'Wedding' },
+  { id: 'l4',  src: wed4,  alt: 'Wedding Photography',    category: 'Wedding' },
+  { id: 'l5',  src: wed5,  alt: 'Wedding Photography',    category: 'Wedding' },
+  { id: 'l6',  src: wed6,  alt: 'Wedding Photography',    category: 'Wedding' },
+  { id: 'l7',  src: wed7,  alt: 'Wedding Photography',    category: 'Wedding' },
+  { id: 'l8',  src: wed8,  alt: 'Wedding Photography',    category: 'Wedding' },
+  { id: 'l9',  src: rec9,  alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l10', src: rec10, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l11', src: rec11, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l12', src: rec12, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l13', src: rec13, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l14', src: rec14, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l15', src: rec15, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l16', src: rec16, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l17', src: rec17, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l18', src: rec18, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l19', src: rec19, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l20', src: rec20, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l21', src: rec21, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l22', src: rec22, alt: 'Reception Photography',  category: 'Reception' },
+  { id: 'l23', src: pre1,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l24', src: pre2,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l25', src: pre3,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l26', src: pre4,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l27', src: pre5,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l28', src: pre6,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l29', src: pre7,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l30', src: pre8,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l31', src: pre9,  alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l32', src: pre10, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l33', src: pre11, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l34', src: pre12, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l35', src: pre13, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l36', src: pre14, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l37', src: pre15, alt: 'Pre Wedding Photography', category: 'Pre Wedding' },
+  { id: 'l38', src: mat1,  alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l39', src: mat2,  alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l40', src: mat3,  alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l41', src: mat4,  alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l42', src: mat5,  alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l43', src: mat6,  alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l44', src: mat7,  alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l45', src: mat8,  alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l46', src: mat9,  alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l47', src: mat10, alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l48', src: mat11, alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l49', src: mat12, alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l50', src: mat13, alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l51', src: mat14, alt: 'Maternity Photography',  category: 'Maternity' },
+  { id: 'l52', src: bri1,  alt: 'Bride Photography',     category: 'Bride' },
+  { id: 'l53', src: bri2,  alt: 'Bride Photography',     category: 'Bride' },
+  { id: 'l54', src: bri3,  alt: 'Bride Photography',     category: 'Bride' },
+  { id: 'l55', src: bri4,  alt: 'Bride Photography',     category: 'Bride' },
+  { id: 'l56', src: bri5,  alt: 'Bride Photography',     category: 'Bride' },
+  { id: 'l57', src: bri6,  alt: 'Bride Photography',     category: 'Bride' },
+  { id: 'l58', src: bri7,  alt: 'Bride Photography',     category: 'Bride' },
+  { id: 'l59', src: baby1, alt: 'Baby Photography',      category: 'Baby' },
+  { id: 'l60', src: baby2, alt: 'Baby Photography',      category: 'Baby' },
+  { id: 'l61', src: baby3, alt: 'Baby Photography',      category: 'Baby' },
+  { id: 'l62', src: baby4, alt: 'Baby Photography',      category: 'Baby' },
+  { id: 'l63', src: baby5, alt: 'Baby Photography',      category: 'Baby' },
+  { id: 'l64', src: baby6, alt: 'Baby Photography',      category: 'Baby' },
+  { id: 'l65', src: baby7, alt: 'Baby Photography',      category: 'Baby' },
+]
+
 const categories = [
-  { id: 'all', label: 'All' },
-  { id: 'Wedding', label: 'Wedding' },
-  { id: 'Reception', label: 'Reception' },
-  { id: 'Pre Wedding', label: 'Pre Wedding' },
-  { id: 'Maternity', label: 'Maternity' },
-  { id: 'Bride', label: 'Bride' },
-  { id: 'Baby', label: 'Baby' },
+  { id: 'all',        label: 'All' },
+  { id: 'Wedding',    label: 'Wedding' },
+  { id: 'Reception',  label: 'Reception' },
+  { id: 'Pre Wedding',label: 'Pre Wedding' },
+  { id: 'Maternity',  label: 'Maternity' },
+  { id: 'Bride',      label: 'Bride' },
+  { id: 'Baby',       label: 'Baby' },
 ]
-const categoryDescriptions = {
-  all: 'Explore our complete collection of photography works.',
 
-  wedding: 'Timeless wedding photography capturing beautiful moments.',
-  reception: 'Reception photography filled with celebration and joy.',
-  prewedding: 'Creative pre-wedding sessions for couples.',
-  maternity: 'Beautiful maternity portraits celebrating motherhood.',
-  bride: 'Elegant bridal portraits and wedding looks.',
-  baby: 'Cute baby photography and memorable childhood moments.',
+const categoryDescriptions = {
+  all:          'Explore our complete collection of photography works.',
+  Wedding:      'Timeless wedding photography capturing beautiful moments.',
+  Reception:    'Reception photography filled with celebration and joy.',
+  'Pre Wedding':'Creative pre-wedding sessions for couples.',
+  Maternity:    'Beautiful maternity portraits celebrating motherhood.',
+  Bride:        'Elegant bridal portraits and wedding looks.',
+  Baby:         'Cute baby photography and memorable childhood moments.',
 }
 
-const portfolioItems = photos.map(photo => ({
-  id: photo.id,
-  cat: photo.category,
-  src: photo.src,
-  alt: photo.alt,
-}))
-
 export default function Portfolio() {
-  const [active,   setActive]   = useState('all')
-  const [lightbox, setLightbox] = useState(null)
+  const [active,      setActive]      = useState('all')
+  const [lightbox,    setLightbox]    = useState(null)
+  const [apiPhotos,   setApiPhotos]   = useState([])   // newest first from server
+
+  // Fetch uploaded gallery images once on mount
+  useEffect(() => {
+    fetch('http://localhost:5000/gallery')
+      .then(res => res.ok ? res.json() : Promise.reject())
+      .then(data => {
+        // Map API shape → same shape as localPhotos
+        // API returns newest first (_id: -1 sort on server)
+        const mapped = data.map(item => ({
+          id:       `api-${item._id}`,
+          src:      item.imageUrl,
+          alt:      item.title || 'Gallery photo',
+          category: item.category,
+        }))
+        setApiPhotos(mapped)
+      })
+      .catch(() => {
+        // Silently fail — local photos still show
+      })
+  }, [])
+
+  // API images first (newest), then local images
+  const allPhotos = [...apiPhotos, ...localPhotos]
 
   const filtered =
-  active === 'all'
-    ? portfolioItems
-    : portfolioItems.filter(item => item.cat === active)
-    
+    active === 'all'
+      ? allPhotos
+      : allPhotos.filter(item => item.category === active)
+
   const openLightbox  = (item) => setLightbox(item)
   const closeLightbox = ()     => setLightbox(null)
 
   const navigate = (dir) => {
-    const list = active === 'all' ? portfolioItems : portfolioItems.filter(p => p.cat === active)
+    const list = active === 'all' ? allPhotos : allPhotos.filter(p => p.category === active)
     const idx  = list.findIndex(p => p.id === lightbox.id)
     setLightbox(list[(idx + dir + list.length) % list.length])
   }
@@ -364,34 +387,34 @@ export default function Portfolio() {
           </button>
         ))}
       </div>
-      <div className="portfolio__category-info">
 
-  <p>{categoryDescriptions[active]}</p>
-</div>
+      <div className="portfolio__category-info">
+        <p>{categoryDescriptions[active]}</p>
+      </div>
 
       {/* ---- Photo grid ---- */}
       <div className="portfolio__grid" key={active}>
-  {filtered.map((item, i) => (
-    <button
-      key={item.id}
-      className="portfolio__item"
-      style={{ animationDelay: `${i * 40}ms` }}
-      onClick={() => openLightbox(item)}
-      aria-label={item.alt}
-    >
-      <img
-        src={item.src}
-        alt={item.alt}
-        loading="lazy"
-        className="portfolio__img"
-      />
-
-      <div className="portfolio__overlay">
-        <span className="portfolio__overlay-icon">+</span>
+        {filtered.map((item, i) => (
+          <button
+            key={item.id}
+            className="portfolio__item"
+            style={{ animationDelay: `${i * 40}ms` }}
+            onClick={() => openLightbox(item)}
+            aria-label={item.alt}
+          >
+            <img
+              src={item.src}
+              alt={item.alt}
+              loading="lazy"
+              className="portfolio__img"
+            />
+            <div className="portfolio__overlay">
+              <span className="portfolio__overlay-icon">+</span>
+            </div>
+          </button>
+        ))}
       </div>
-    </button>
-  ))}
-</div>
+
       {/* ---- Lightbox ---- */}
       {lightbox && (
         <div
@@ -400,9 +423,9 @@ export default function Portfolio() {
           aria-modal="true"
           onClick={closeLightbox}
           onKeyDown={e => {
-            if (e.key === 'Escape')     closeLightbox()
-            if (e.key === 'ArrowRight') navigate(1)
-            if (e.key === 'ArrowLeft')  navigate(-1)
+            if (e.key === 'Escape')      closeLightbox()
+            if (e.key === 'ArrowRight')  navigate(1)
+            if (e.key === 'ArrowLeft')   navigate(-1)
           }}
           tabIndex={-1}
         >
@@ -413,10 +436,16 @@ export default function Portfolio() {
             className="portfolio__lb-img"
             onClick={e => e.stopPropagation()}
           />
-          <button className="portfolio__lb-nav portfolio__lb-nav--prev"
-            onClick={e => { e.stopPropagation(); navigate(-1) }} aria-label="Previous">‹</button>
-          <button className="portfolio__lb-nav portfolio__lb-nav--next"
-            onClick={e => { e.stopPropagation(); navigate(1) }}  aria-label="Next">›</button>
+          <button
+            className="portfolio__lb-nav portfolio__lb-nav--prev"
+            onClick={e => { e.stopPropagation(); navigate(-1) }}
+            aria-label="Previous"
+          >‹</button>
+          <button
+            className="portfolio__lb-nav portfolio__lb-nav--next"
+            onClick={e => { e.stopPropagation(); navigate(1) }}
+            aria-label="Next"
+          >›</button>
         </div>
       )}
     </section>
