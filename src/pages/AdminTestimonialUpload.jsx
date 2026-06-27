@@ -25,7 +25,7 @@ export default function AdminTestimonialUpload() {
 
     try {
       setLoading(true);
-      await axios.post("http://localhost:5000/api/testimonials/add", formData);
+      await axios.post("https://devz-backend.onrender.com/api/testimonials/add", formData);
       alert("Testimonial saved");
       setClientName(""); setReview(""); setImage(null); setPreview("");
       document.getElementById("testimonialInput").value = "";

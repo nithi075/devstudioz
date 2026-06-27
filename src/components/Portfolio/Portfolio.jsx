@@ -326,7 +326,7 @@ export default function Portfolio() {
 
   // Fetch uploaded gallery images once on mount
   useEffect(() => {
-    fetch('http://localhost:5000/gallery')
+    fetch('https://devz-backend.onrender.com/gallery')
       .then(res => res.ok ? res.json() : Promise.reject())
       .then(data => {
         // Map API shape → same shape as localPhotos

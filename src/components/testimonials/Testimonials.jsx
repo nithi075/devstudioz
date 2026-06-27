@@ -11,7 +11,7 @@ export default function Testimonials() {
   const [error, setError]               = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/testimonials')
+    fetch('https://devz-backend.onrender.com/api/testimonials')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch')
         return res.json()

@@ -27,7 +27,7 @@ export default function AdminImageUpload() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/gallery/add", formData);
+      const res = await axios.post("https://devz-backend.onrender.com/gallery/add", formData);
       alert(res.data.message || "Photo uploaded");
       setTitle(""); setCategory(""); setImage(null); setPreview("");
       document.getElementById("galleryInput").value = "";
