@@ -356,8 +356,8 @@ color: var(--color-dark);
 }
 
 .navbar__logo-image {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   display: block;
   transition: opacity 0.3s ease;
@@ -389,7 +389,7 @@ color: var(--color-dark);
 
 @media (max-width: 480px) {
   .navbar__logo-image {
-    width: 90px;
-    height: 90px;
+    width: 56px;
+    height: 56px;
   }
 }
