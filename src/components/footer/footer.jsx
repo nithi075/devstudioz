@@ -49,7 +49,7 @@ return ( <footer className="footer"> <div className="footer__top">
   aria-label="Srimathi Photography — Home"
 >
   <span className="footer__logo-text">
-    DEVZ
+    DEV
     <small>STUDIOZ</small>
   </span>
 </Link>
