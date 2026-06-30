@@ -207,7 +207,7 @@ return ( <footer className="footer"> <div className="footer__top">
 
   <div className="footer__bottom">
     <p className="footer__copyright">
-      © 2026 Devz Studioz. All rights reserved.
+      © 2026 Dev Studioz. All rights reserved.
     </p>
   </div>
 </footer>
